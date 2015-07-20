@@ -24,21 +24,23 @@ $(document).ready(function(){
 	$("body").on('click', '#btn', function(){
 		$("body").append("<div class=\"new\"></div");
 		var $el = $("body").children().last();
+		var empString1 = "<p class=\"entryname\">" + 'Name: ' + employee.firstname + ' ' + employee.lastname + '</p>' + '<p class=\"entryother\">' + 'Employee Number: ' + employee.employeenumber + '</p>' + '<p class=\"entryother\">' + ' Title: ' + employee.title + '</p>'
+		var empString2 = "<p class=\"entryother\">" + ' Salary: ' + employee.salary + '</p>' + '<button class=\"remove\">Remove</button>';
 		switch(employee.lastreviewscore) {
 			case "1":
-			$el.append("<p class=\"entryname\">" + "Name: " + employee.firstname + " " + employee.lastname + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + employee.employeenumber + "</p>" + "<p class=\"entryother\">" + " Title: " + employee.title + "</p>" + "<p class=\"entryrating1\">Review Score: *</p>" + "<p class=\"entryother\">" + " Salary: " + employee.salary + "</p>" + "<button class=\"remove\">Remove</button>");
+			$el.append(empString1 + "<p class=\"entryrating1\">Review Score: *</p>" + empString2);
 			break;
 			case "2":
-			$el.append("<p class=\"entryname\">" + "Name: " + employee.firstname + " " + employee.lastname + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + employee.employeenumber + "</p>" + "<p class=\"entryother\">" + " Title: " + employee.title + "</p>" + "<p class=\"entryrating2\">Review Score: **</p>" + "<p class=\"entryother\">" + " Salary: " + employee.salary + "</p>" + "<button class=\"remove\">Remove</button>");
+			$el.append(empString1 + "<p class=\"entryrating2\">Review Score: **</p>" + empString2);
 			break;
 			case "3":
-			$el.append("<p class=\"entryname\">" + "Name: " + employee.firstname + " " + employee.lastname + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + employee.employeenumber + "</p>" + "<p class=\"entryother\">" + " Title: " + employee.title + "</p>" + "<p class=\"entryrating3\">Review Score: ***</p>" + "<p class=\"entryother\">" + " Salary: " + employee.salary + "</p>" + "<button class=\"remove\">Remove</button>");
+			$el.append(empString1 + "<p class=\"entryrating3\">Review Score: ***</p>" + empString2);
 			break;
 			case "4":
-			$el.append("<p class=\"entryname\">" + "Name: " + employee.firstname + " " + employee.lastname + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + employee.employeenumber + "</p>" + "<p class=\"entryother\">" + " Title: " + employee.title + "</p>" + "<p class=\"entryrating4\">Review Score: ****</p>" + "<p class=\"entryother\">" + " Salary: " + employee.salary + "</p>" + "<button class=\"remove\">Remove</button>");
+			$el.append(empString1 + "<p class=\"entryrating4\">Review Score: ****</p>" + empString2);
 			break;
 			case "5":
-			$el.append("<p class=\"entryname\">" + "Name: " + employee.firstname + " " + employee.lastname + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + employee.employeenumber + "</p>" + "<p class=\"entryother\">" + " Title: " + employee.title + "</p>" + "<p class=\"entryrating5\">Review Score: *****</p>" + "<p class=\"entryother\">" + " Salary: " + employee.salary + "</p>" + "<button class=\"remove\">Remove</button>");
+			$el.append(empString1 + "<p class=\"entryrating5\">Review Score: *****</p>" + empString2);
 			break;
 			default:
 			alert("Your employee rating is invalid.");
