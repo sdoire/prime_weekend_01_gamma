@@ -1,6 +1,6 @@
 //I realize this was not the most efficient way to solve the problem. My plan was to get it to work and then add functions
 //where necessary to make for cleaner code. Alas, once I committed to this method, adding functions later became a giant task.
-//I ran out of the time necessary to clean it up. I also failed to figure out the correct method to alphabetize elements on the DOM,
+//I ran out of the time necessary to clean it up completely. I also failed to figure out the correct method to alphabetize elements on the DOM,
 //and also couldn't figure out how to use the array to help with the process. -SD
 
 $(document).ready(function(){
@@ -43,6 +43,7 @@ $(document).ready(function(){
 			$el.append(empString1 + "<p class=\"entryrating5\">Review Score: *****</p>" + empString2);
 			break;
 			default:
+			$el.remove();
 			alert("Your employee rating is invalid.");
 		}
 
