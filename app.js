@@ -24,7 +24,7 @@ $(document).ready(function(){
 	$("body").on('click', '#btn', function(){
 		$("body").append("<div class=\"new\"></div");
 		var $el = $("body").children().last();
-		var empString1 = "<p class=\"entryname\">" + 'Name: ' + employee.firstname + ' ' + employee.lastname + '</p>' + '<p class=\"entryother\">' + 'Employee Number: ' + employee.employeenumber + '</p>' + '<p class=\"entryother\">' + ' Title: ' + employee.title + '</p>'
+		var empString1 = "<p class=\"entryname\">" + 'Name: ' + employee.firstname + ' ' + employee.lastname + '</p>' + '<p class=\"entryother\">' + 'Employee Number: ' + employee.employeenumber + '</p>' + '<p class=\"entryother\">' + ' Title: ' + employee.title + '</p>';
 		var empString2 = "<p class=\"entryother\">" + ' Salary: ' + employee.salary + '</p>' + '<button class=\"remove\">Remove</button>';
 		switch(employee.lastreviewscore) {
 			case "1":
@@ -63,22 +63,24 @@ $(document).ready(function(){
 //adds random employee to top of page
 	$("body").on('click', '#random', function(){
 		var $el = $("div").first();
-		empRandom = employeeArray[randomNumber(0, employeeArray.length-1)];
+		var empRandom = employeeArray[randomNumber(0, employeeArray.length-1)];
+		var empString3 = "<div class=\"new\">" + "<p class=\"entryname\">" + "Name: " + empRandom[0] + " " + empRandom[1] + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + empRandom[2] + "</p>" + "<p class=\"entryother\">" + " Title: " + empRandom[3] + "</p>";
+		var empString4 = "<p class=\"entryother\">" + " Salary: " + empRandom[5] + "</p>" + "<button class=\"remove\">Remove</button>" + "</div>";
 			switch(empRandom[4]) {
 			case "1":
-			$el.before("<div class=\"new\">" + "<p class=\"entryname\">" + "Name: " + empRandom[0] + " " + empRandom[1] + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + empRandom[2] + "</p>" + "<p class=\"entryother\">" + " Title: " + empRandom[3] + "</p>" + "<p class=\"entryrating1\">Review Score: *</p>" + "<p class=\"entryother\">" + " Salary: " + empRandom[5] + "</p>" + "<button class=\"remove\">Remove</button>" + "</div>");
+			$el.before(empString3 + "<p class=\"entryrating1\">Review Score: *</p>" + empString4);
 			break;
 			case "2":
-			$el.before("<div class=\"new\">" + "<p class=\"entryname\">" + "Name: " + empRandom[0] + " " + empRandom[1] + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + empRandom[2] + "</p>" + "<p class=\"entryother\">" + " Title: " + empRandom[3] + "</p>" + "<p class=\"entryrating2\">Review Score: **</p>" + "<pclass=\"entryother\">" +  " Salary: " + empRandom[5] + "</p>" + "<button class=\"remove\">Remove</button>" + "</div>");
+			$el.before(empString3 + "<p class=\"entryrating2\">Review Score: **</p>" + empString4);
 			break;
 			case "3":
-			$el.before("<div class=\"new\">" + "<p class=\"entryname\">" + "Name: " + empRandom[0] + " " + empRandom[1] + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + empRandom[2] + "</p>" + "<p class=\"entryother\">" + " Title: " + empRandom[3] + "</p>" + "<p class=\"entryrating3\">Review Score: ***</p>" + "<p class=\"entryother\">" + " Salary: " + empRandom[5] + "</p>" + "<button class=\"remove\">Remove</button>" + "</div>");
+			$el.before(empString3 + "<p class=\"entryrating3\">Review Score: ***</p>" + empString4);
 			break;
 			case "4":
-			$el.before("<div class=\"new\">" + "<p class=\"entryname\">" + "Name: " + empRandom[0] + " " + empRandom[1] + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + empRandom[2] + "</p>" + "<p class=\"entryother\">" + " Title: " + empRandom[3] + "</p>" + "<p class=\"entryrating4\">Review Score: ****</p>" + "<p class=\"entryother\">" + " Salary: " + empRandom[5] + "</p>" + "<button class=\"remove\">Remove</button>" + "</div>");
+			$el.before(empString3 + "<p class=\"entryrating4\">Review Score: ****</p>" + empString4);
 			break;
 			case "5":
-			$el.before("<div class=\"new\">" + "<p class=\"entryname\">" + "Name: " + empRandom[0] + " " + empRandom[1] + "</p>" + "<p class=\"entryother\">" + "Employee Number: " + empRandom[2] + "</p>" + "<p class=\"entryother\">" + " Title: " + empRandom[3] + "</p>" + "<p class=\"entryrating5\">Review Score: *****</p>" + "<p class=\"entryother\">" + " Salary: " + empRandom[5] + "</p>" + "<button class=\"remove\">Remove</button>" + "</div>");
+			$el.before(empString3 + "<p class=\"entryrating5\">Review Score: *****</p>" + empString4);
 			break;
 		}
 	});
@@ -98,8 +100,7 @@ $(document).ready(function(){
 });
 
 
-
-
+ 
 function randomNumber(min, max) {
 	return Math.floor(Math.random() * (1 + max - min) + min);
 }
